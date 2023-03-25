@@ -13,9 +13,8 @@ const CountersList = () => {
     const [counters, setCounters] = useState(initialState);
 
     const handleDelete = (id) => {
-        const newCounters = counters.filter(c => c.id !== id)
-        console.log(newCounters)
-        setCounters(newCounters);
+        const updateCounters = counters.filter(c => c.id !== id)
+        setCounters(updateCounters);
     }
 
     const handleReset = () => {
@@ -23,7 +22,7 @@ const CountersList = () => {
     }
 
     const onIncrement = (id) => {
-        const newCounters2 = counters.map((elem) => {
+        const сounterIncrement = counters.map((elem) => {
             const copy = { ...elem };
             if (copy.id === id) {
                 copy.value = copy.value + 1;
@@ -32,11 +31,11 @@ const CountersList = () => {
                 return copy;
             }
         })
-        setCounters(newCounters2)
+        setCounters(сounterIncrement)
     }
 
     const onDecrement = (id) => {
-        const newCounters3 = counters.map((elem) => {
+        const сounterDecrement = counters.map((elem) => {
             const copy = { ...elem };
             if (copy.id === id && copy.value > 0) {
                 copy.value = copy.value - 1;
@@ -45,7 +44,7 @@ const CountersList = () => {
                 return copy;
             }
         })
-        setCounters(newCounters3)
+        setCounters(сounterDecrement)
     }
 
     return (
